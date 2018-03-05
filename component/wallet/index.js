@@ -12,8 +12,10 @@ import styles from './styles.js';
 
 import logo from '../../assets/wbLogo.png';
 import blurBg from '../../assets/blurBg.png';
-// import bg from './assets/bg.png';
 import { Ionicons, Feather } from '@expo/vector-icons';
+
+// component
+import { Card, CardTitle, CardBody, CardIcon, CardContent, Panel } from '../card/index.js';
 
 class Wallet extends Component {
     render() {
@@ -49,29 +51,68 @@ class Wallet extends Component {
                     <View style={styles.viewContent}>
                         <ScrollView>
                             <TouchableOpacity>
-                                <View style={styles.card}>
-                                    <View style={styles.viewCardTitle}>
-                                        <Text style={styles.cardTitleText}>បង្កក់ទុក</Text>
-                                    </View>
-                                    <View style={styles.viewCardContent}>
-                                        <View style={{ flex: 0.3, justifyContent: 'center' }}>
-                                            <Ionicons name="md-lock" color="#e74c3c" size={20} />
-                                        </View>
-                                        <View style={{ flex: 2 }}>
-                                            <Text style={styles.cardContentText}>បង្កក់រួច</Text>
-                                            <Text style={styles.cardContentText}>17 មករា 2018 09:00 ព្រឹក</Text>
-                                        </View>
-                                        <View style={{ flex: 1.3, justifyContent: 'center' }}>
-                                            <Text style={styles.depositValue}>40,000.00 ៛</Text>
-                                        </View>
-                                    </View>
-                                </View>
+                                <Card
+                                    round={15}
+                                    titleBg='rgba(255,255,255,.4)'
+                                    margin={12}
+                                >
+                                    <CardTitle title="បង្កក់ទុក" color="#2c3e50" background="rgba(255,255,255,.6)" round={15} />
+                                    <CardBody>
+                                        <CardIcon name="md-cash" color="#20bf6b" />
+                                        <CardContent
+                                            title="បង្កក់រួច"
+                                            titleColor="#34495e"
+                                            subTitle="17 មករា 2018 09:00 ព្រឹក"
+                                            subTitleColor="#34495e"
+                                            value="+400,000.00 ៛"
+                                            valueColor="#20bf6b"
+                                        />
+                                    </CardBody>
+                                </Card>
                             </TouchableOpacity>
-                            <View style={styles.cardDateTime}>
-                                <Text style={{ color: 'white' }}>ថ្ងៃពុធ​ ទី18 ខែមករា ឆ្នាំ2018</Text>
-                            </View>
+
+                            <Panel
+                                title="ថ្ងៃពុធ​ ទី18 ខែមករា ឆ្នាំ2018"
+                                background="rgba(41,128,185,.5)"
+                                color="#fff"
+                                marginTopBottom={3}
+                            />
 
                             <TouchableOpacity>
+                                <Card
+                                    round={15}
+                                    titleBg='rgba(255,255,255,.4)'
+                                    marginTopBottom={4}
+                                >
+                                    <CardBody>
+                                        <CardIcon name="md-cash" color="#20bf6b" />
+                                        <CardContent
+                                            title="បង្កក់រួច"
+                                            titleColor="#34495e"
+                                            subTitle="17 មករា 2018 09:00 ព្រឹក"
+                                            subTitleColor="#34495e"
+                                            value="+400,000.00 ៛"
+                                            valueColor="#20bf6b"
+                                        />
+                                    </CardBody>
+                                </Card>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                                <Card round={15} titleBg='rgba(255,255,255,.4)'>
+                                    <CardBody>
+                                        <CardIcon name="md-cash" color="#20bf6b" />
+                                        <CardContent
+                                            title="តម្កល់ប្រាក់រួច"
+                                            titleColor="#34495e"
+                                            subTitle="09:00 ព្រឹក"
+                                            subTitleColor="#34495e"
+                                            value="+400,000.00 ៛"
+                                            valueColor="#20bf6b"
+                                        />
+                                    </CardBody>
+                                </Card>
+
                                 <View style={styles.cardWithDrawDeposit}>
                                     <View style={styles.viewCardWithDrawDeposit}>
                                         <View style={{ flex: 0.3, justifyContent: 'center' }}>
@@ -194,7 +235,7 @@ class Wallet extends Component {
 
                     </View>
                 </ImageBackground>
-            </View>
+            </View >
         );
     }
 };
